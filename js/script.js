@@ -54,9 +54,13 @@ calculateSavingsButton.addEventListener("click", function () {
   );
   // console.log(savingsPercentageInput);
 
-  const savingsFormula = (savingsPercentageInput * balance) / 100;
-  // console.log(savingsFormula);
+  const savingsAmount = (savingsPercentageInput * balance) / 100;
+  // console.log(savingsAmount);
 
   const savingsAmountElement = document.getElementById("savings-amount");
-  savingsAmountElement.innerText = savingsFormula;
+  savingsAmountElement.innerText = savingsAmount;
+
+  const remainingBalance = balance - savingsAmount;
+  const remainingBalanceElement = document.getElementById("remaining-balance");
+  remainingBalanceElement.innerText = remainingBalance;
 });
