@@ -14,4 +14,13 @@ calculateButton.addEventListener("click", function () {
   // console.log({ income, software, courses, internet });
   // console.dir({ income, software, courses, internet });
   console.table({ income, software, courses, internet });
+
+  const totalExpenses = software + courses + internet;
+  const balance = income - totalExpenses;
+
+  const totalExpensesElement = document.getElementById("total-expenses");
+  totalExpensesElement.innerText = totalExpenses.toFixed(2);
+
+  const balanceElement = document.getElementById("balance");
+  balanceElement.innerText = balance.toFixed(2);
 });
