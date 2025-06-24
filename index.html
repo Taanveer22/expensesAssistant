@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  
   <body>
     <div class="flex items-center justify-center min-h-screen bg-gray-100">
       <div class="container max-w-md bg-white rounded-xl shadow-lg p-6">
@@ -48,7 +47,7 @@
               class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               placeholder="Enter income"
             />
-            <p id="income-error" class="text-red-500 text-xs mt-1 hidden">
+            <p id="income-error" class="hidden text-red-500 text-xs mt-1">
               ⚠️ Invalid income!
             </p>
           </div>
@@ -64,7 +63,7 @@
               class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               placeholder="Software cost"
             />
-            <p id="software-error" class="text-red-500 text-xs mt-1 hidden">
+            <p id="software-error" class="hidden text-red-500 text-xs mt-1">
               ⚠️ Invalid amount!
             </p>
           </div>
@@ -80,7 +79,7 @@
               class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               placeholder="Course cost"
             />
-            <p id="courses-error" class="text-red-500 text-xs mt-1 hidden">
+            <p id="courses-error" class="hidden text-red-500 text-xs mt-1">
               ⚠️ Invalid amount!
             </p>
           </div>
@@ -120,7 +119,7 @@
               class="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
               placeholder="Savings %"
             />
-            <p id="savings-error" class="text-red-500 text-xs mt-1 hidden">
+            <p id="savings-error" class="hidden text-red-500 text-xs mt-1">
               ⚠️ Invalid percentage!
             </p>
           </div>
@@ -181,7 +180,7 @@
         </div>
 
         <!-- Error Messages -->
-        <p id="logic-error" class="text-red-500 mt-4 hidden text-center">
+        <p id="logic-error" class="hidden text-red-500 mt-4 text-center">
           ⚠️ Total expenses cannot exceed your income!
         </p>
 

@@ -32,6 +32,28 @@ calculateButton.addEventListener("click", function () {
   const balanceElement = document.getElementById("balance");
   balanceElement.innerText = balance.toFixed(2);
 
+  // input validation
+  if (isNaN(income) || income <= 0) {
+    document.getElementById("income-error").classList.remove("hidden");
+  }
+
+  if (isNaN(software) || software <= 0) {
+    document.getElementById("software-error").classList.remove("hidden");
+  }
+
+  if (isNaN(courses) || courses <= 0) {
+    document.getElementById("courses-error").classList.remove("hidden");
+  }
+
+  if (isNaN(internet) || internet <= 0) {
+    document.getElementById("internet-error").classList.remove("hidden");
+  }
+
+  if (totalExpenses >= income) {
+    document.getElementById("logic-error").classList.remove("hidden");
+    return;
+  }
+
   // show results section
   const resultsElement = document.getElementById("results");
   resultsElement.classList.remove("hidden");
@@ -90,6 +112,11 @@ calculateSavingsButton.addEventListener("click", function () {
   const remainingBalance = balance - savingsAmount;
   const remainingBalanceElement = document.getElementById("remaining-balance");
   remainingBalanceElement.innerText = remainingBalance.toFixed(2);
+
+  // validation
+  if (isNaN(savingsPercentageInput) || savingsPercentageInput <= 0) {
+    document.getElementById("savings-error").classList.remove("hidden");
+  }
 });
 
 // history and assistant tab variable declaretion
