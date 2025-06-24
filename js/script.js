@@ -1,5 +1,8 @@
 console.log("script js connected");
 
+// all global variable declaretion
+let count = 0;
+
 // -------------------------------------------------
 //event listener for calculate button
 // -------------------------------------------------
@@ -9,6 +12,7 @@ const calculateButton = document.getElementById("calculate");
 
 calculateButton.addEventListener("click", function () {
   // console.log("calculate button clicked");
+  count = count + 1;
 
   const income = parseFloat(document.getElementById("income").value);
   const software = parseFloat(document.getElementById("software").value);
@@ -40,6 +44,7 @@ calculateButton.addEventListener("click", function () {
   historyItemsDiv.className =
     "bg-white p-3 rounded-md border-l-2 border-indigo-500";
   historyItemsDiv.innerHTML = `
+        <p class = "text-sm text-gray-900">Serial : ${count}</p>
         <p class = "text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
         <p class = "text-xs text-gray-500">Income : ${income.toFixed(2)}</p>
         <p class = "text-xs text-gray-500">Expenses : ${totalExpenses.toFixed(
@@ -87,10 +92,13 @@ calculateSavingsButton.addEventListener("click", function () {
   remainingBalanceElement.innerText = remainingBalance.toFixed(2);
 });
 
-// history and assistant tab functionality
+// history and assistant tab variable declaretion
 const historyTab = document.getElementById("history-tab");
 const assistantTab = document.getElementById("assistant-tab");
+const expenseForm = document.getElementById("expense-form");
+const historySection = document.getElementById("history-section");
 
+// event listener for history tab
 historyTab.addEventListener("click", function () {
   historyTab.classList.add(
     "text-white",
@@ -108,10 +116,33 @@ historyTab.addEventListener("click", function () {
   );
 
   // hide expense form section
-  const expenseForm = document.getElementById("expense-form");
   expenseForm.classList.add("hidden");
 
   // show history section
-  const historySection = document.getElementById("history-section");
   historySection.classList.remove("hidden");
+});
+
+// event listener for assistant tab
+assistantTab.addEventListener("click", function () {
+  assistantTab.classList.add(
+    "text-white",
+    "font-semibold",
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-purple-600"
+  );
+
+  historyTab.classList.remove(
+    "text-white",
+    "font-semibold",
+    "bg-gradient-to-r",
+    "from-blue-500",
+    "to-purple-600"
+  );
+
+  // show expense form section
+  expenseForm.classList.remove("hidden");
+
+  // hide history section
+  historySection.classList.add("hidden");
 });
